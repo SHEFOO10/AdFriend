@@ -3,10 +3,19 @@
   "name": "AdFriend - Transform Ads into Engaging Content",
   "version": "1.0",
   "description": "Tired of boring, repetitive ads? AdFriend is here to revolutionize your browsing experience! With AdFriend, you can effortlessly edit and customize ad content on any website, turning dull advertisements into engaging, motivational, and visually appealing messages. Whether you're a marketer, content creator, or just someone who loves personalization, AdFriend puts the power of ad customization in your hands.",
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "scripting"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["content-script.js"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"]
 }
